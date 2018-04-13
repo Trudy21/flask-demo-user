@@ -57,7 +57,7 @@ def login():
         # user = UserProfile.query.filter_by(username=username, password=password)\
         # .first()
         # or
-        user = UserProfile.query.filter_by(username=username).first()
+        user = UserProfile.query.filter_by(first_name=first_name, last_name=last_name, username=username, password=password)
 
         if user is not None and check_password_hash(user.password, password):
             remember_me = False
